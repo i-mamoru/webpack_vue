@@ -7,7 +7,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename:'bundle.js',
+    filename: 'bundle.js',
+    chunkFilename:'js/[name].chank.js'
   },
   module: {
     rules: [
@@ -34,20 +35,20 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          loaders: {
-            css: {
-              loader: 'css-loader',
-            },
-            scss: {
-              loader: 'sass-loader',
-              options: {
-                data: '@import "style.scss";',
-                includePaths: [path.resolve(__dirname, './src/style/')],
-              }
-            },
-          },
-        },
+        // options: {
+        //   loaders: {
+        //     css: {
+        //       loader: 'css-loader',
+        //     },
+        //     scss: {
+        //       loader: 'sass-loader',
+        //       // options: {
+        //       //   data: '@import "style.scss";',
+        //       //   includePaths: [path.resolve(__dirname, './src/style/')],
+        //       // }
+        //     },
+        //   },
+        // },
       },
       {
         test: /\.js$/,
@@ -69,7 +70,8 @@ module.exports = {
         port: 4000,
         proxy: 'http://localhost:8080/',
         // online: false,
-        open:false,
+        open: false,
+        notify: false
       },
       {
         reload: true

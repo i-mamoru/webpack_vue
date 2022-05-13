@@ -39,25 +39,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" module>
-body {
-  text-align: center;
-
-  table {
-    margin: auto;
-    border-collapse: collapse;
-    width: 100%;
-
-    tr {
-      th {
-        background-color: gray;
-        border: solid 1px black;
-      }
-
-      td {
-        border: solid 1px black;
-      }
-    }
-  }
-}
-</style>
