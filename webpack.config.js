@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const { VueLoaderPlugin } = require('vue-loader')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
@@ -63,6 +64,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      __VUE_OPTIONS_API__: false,
+      __VUE_PROD_DEVTOOLS__:false,
+    }),
     new VueLoaderPlugin(),
     new BrowserSyncPlugin(
       {

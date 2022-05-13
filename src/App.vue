@@ -5,6 +5,7 @@
 export default {
   name: 'App',
   data() {
+    console.log('test')
     return {
       msg: 'HELLO VUE'
     }
